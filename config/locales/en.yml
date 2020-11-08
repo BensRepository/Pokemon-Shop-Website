@@ -30,9 +30,28 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  app_title: PokeBen
+  app_description: best website ever
+
+
   home:
       home:
-        title: My Notes
-        welcome: Welcome to my notes site!
-  app_title: My Notes
-  app_description: A place where you can keep all of your notes.
+        title: PokeBen
+        welcome: A place where all the booster boxes are in stock.
+
+      contact:
+        title: Contact us
+        contact_us: if you have any queries please fill in this form and get in touch with us.
+
+        name: "Name:"
+        enter_name: Enter your name
+        email: "Email:"
+        enter_email: Enter your email address
+        telephone: "Telephone:"
+        enter_telephone: Enter your telephone number
+        message: "Message:"
+        enter_message: What do you want to say?
+        submit: Contact Us
+        request_contact:
+          no_email: You must supply an email address
+          email_sent: Thank you. We will be in touch shortly.
