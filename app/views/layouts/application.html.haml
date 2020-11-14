@@ -6,7 +6,7 @@
     %meta{'http-equiv' => 'x-ua-compatible', 'content' => 'ie=edge'}
 
 
-    %img{:src => "/pokeball.png", :width => 200}
+
 
     %meta{'name' => 'description', 'content' => t('app_description')}
     %meta{'name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'}
@@ -17,9 +17,11 @@
     = csrf_meta_tags
 
   %body
+    = render "shared/navbar"
 
     - flash.each do |key, value|
       = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
 
-
-    = yield
+    %div#incoming_content
+      %img{:src => "/pokeball.png", :width => 200}
+      = yield
