@@ -23,5 +23,11 @@
       = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
 
     %div#incoming_content
-      %img{:src => "/pokeball.png", :width => 200}
+      %table
+        %tr
+        %tr
+        %td
+          %img{:src => "/pokeball.png", :width => 200}
+          %td
+            %h1=t('app_title')
       = yield

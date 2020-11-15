@@ -1,0 +1,33 @@
+%h2 Products
+
+%table{:cellpadding => "0", :cellspacing => "0"}
+
+  %tbody
+    - @products.each do |product|
+      %tr
+        %td
+          %img{:src => product.image, :width => 250}
+      %tr
+        %td= product.name
+      %tr
+        %td= product.description
+      %tr
+        %th Stock
+        %td= product.stock
+      %tr
+      %span
+        %th Price
+        %td= product.price
+        %td
+          %button.button Buy
+      %td= link_to 'Show', product
+      %td= link_to 'Edit', edit_product_path(product)
+      %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Product', new_product_path
+
+
+
+%table{:style => "width:100%"}
