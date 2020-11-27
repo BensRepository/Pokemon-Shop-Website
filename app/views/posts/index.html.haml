@@ -1,0 +1,25 @@
+%h2 Trading Fourm
+
+%table{:style => "width:100%"}
+  %thead
+    %tr
+      %th Title
+      %th Author
+      %th Date
+      %th
+      %th
+      %th
+
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= post.title
+        %td= post.author
+        %td= post.date
+        %td= link_to 'Show', post
+        %td= link_to 'Edit', edit_post_path(post)
+        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Post', new_post_path

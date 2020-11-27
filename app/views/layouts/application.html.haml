@@ -12,15 +12,14 @@
     %meta{'name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'}
 
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turrbolinks-track' => true
     = javascript_include_tag 'modernizr'
     = csrf_meta_tags
 
   %body
     = render "shared/navbar"
 
-    - flash.each do |key, value|
-      = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
+
 
     %div#incoming_content
       %table
@@ -30,4 +29,6 @@
           %img{:src => "/pokeball.png", :width => 200}
           %td
             %h1=t('app_title')
+      = render 'shared/header'
       = yield
+      = render 'shared/footer'
