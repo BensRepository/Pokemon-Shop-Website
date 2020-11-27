@@ -1,6 +1,6 @@
-%h1 comments
+%h2 Your comments
 
-%table
+%table{:style => "width:70%"}
   %thead
     %tr
       %th Post
@@ -12,6 +12,7 @@
   %tbody
     - @comments.each do |comment|
       %tr
+
         %td= comment.post.title
         %td= comment.comment
         %td= link_to 'Show', comment
@@ -19,5 +20,3 @@
         %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
-
-= link_to 'New Comment', new_comment_path

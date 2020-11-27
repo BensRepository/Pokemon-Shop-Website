@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.user_comments(current_user)
   end
 
   # GET /comments/1
@@ -25,6 +25,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = @post.comments.new(comment_params)
+    @comment.user = current_user
 
     respond_to do |format|
       if @comment.save
