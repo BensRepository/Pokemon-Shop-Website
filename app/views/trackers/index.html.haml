@@ -1,0 +1,30 @@
+%h2 Old Desired Item Lists
+%h4 we have saved products you previously wanted! click 'show' to see them
+%h4
+  or to make a new one
+  %span{:style => "color:blue;font-weight:bold"}
+    %a{:href => "/products"} Click Here
+  , and add some products!
+
+%span
+  %h3
+  %h3
+
+
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @trackers.each do |tracker|
+
+      %tr
+        %td= tracker.created_at
+        %td= link_to 'Show', tracker
+        %td= link_to 'Destroy', tracker, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br

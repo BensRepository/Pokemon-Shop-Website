@@ -17,6 +17,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= stub home
+//= stub products
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
   document.getElementById("mySidebar").style.width = "200px";

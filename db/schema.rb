@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_28_000503) do
+ActiveRecord::Schema.define(version: 2020_11_28_171303) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "post_id", null: false
@@ -31,11 +31,25 @@ ActiveRecord::Schema.define(version: 2020_11_28_000503) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "product_to_trackers", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "tracker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_to_trackers_on_product_id"
+    t.index ["tracker_id"], name: "index_product_to_trackers_on_tracker_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "collection"
     t.string "category"
     t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trackers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,25 @@
+%p#notice= notice
+
+%h3 Back To Products
+= link_to 'Back', products_path
+%h2 Products you want!
+%table{:cellpadding => "0", :cellspacing => "0"}
+
+  %tbody
+    - @tracker.product_to_trackers.each do |item|
+      %tr
+        %td
+          %img{:src => "/" + item.product.image, :width => 250}
+      %tr
+        %td= item.product.name
+      %tr
+        %th Collection
+        %td= item.product.collection
+      %tr
+        %th Category
+        %td= item.product.category
+      %tr
+        %td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+%br

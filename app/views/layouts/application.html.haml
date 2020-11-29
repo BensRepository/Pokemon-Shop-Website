@@ -26,9 +26,20 @@
         %tr
         %tr
         %td
-          %img{:src => "/pokeball.png", :width => 200}
+          %a{:href => "/"}
+            %img{:src => "/pokeball.png", :width => 200}
           %td
-            %h1=t('app_title')
+            %a{:href => "/"}
+              %h1=t('app_title')
+          %td
+            %a{:href => "/tradingtracker"}
+              %img{:src => "/tracker.jpg", :width => 200}
+
+
+
+
+
+
       = render 'shared/header'
       = yield
       = render 'shared/footer'
