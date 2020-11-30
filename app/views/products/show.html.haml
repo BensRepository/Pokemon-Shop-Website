@@ -1,5 +1,4 @@
 %p#notice= notice
-
 %p
   %b Name:
   = @product.name
@@ -10,7 +9,7 @@
   %b Category:
   = @product.category
 %p
-%img{:src => @product.image, :width => 250}
+%img{:src => "/" + @product.image, :width => 250}
 
 = link_to 'Edit', edit_product_path(@product)
 \|

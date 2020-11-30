@@ -29,10 +29,12 @@ class ProductToTrackersController < ApplicationController
 
     respond_to do |format|
       if @product_to_tracker.save
-        format.html { redirect_to @product_to_tracker.tracker, notice: 'Product to tracker was successfully created.' }
+        format.html { redirect_to @product_to_tracker.tracker, notice: 'Product added to Trading Tracker' }
         format.json { render :show, status: :created, location: @product_to_tracker }
+        format.js { flash[:notice] = 'Product added to Tracker'}
       else
         format.html { render :new }
+        format.js { flash[:notice] = 'Product could not be added to Tracker'}
         format.json { render json: @product_to_tracker.errors, status: :unprocessable_entity }
       end
     end
