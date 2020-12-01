@@ -23,6 +23,7 @@
   %tbody
   - @post.comments.each do |comment|
     %tr
+      %td="PokeBen user: "
+      %td= comment.user_id
+      %td= "_____________"
       %td= comment.comment
-      %td= link_to 'Show', comment
-      

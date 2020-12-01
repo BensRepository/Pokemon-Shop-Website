@@ -5,4 +5,5 @@ class Comment < ApplicationRecord
   belongs_to :user
 
   scope :user_comments, ->(user) { joins(:post).where(['user_id = ?', user.id]) }
+
 end

@@ -1,0 +1,23 @@
+%h2 Your Posts
+
+%table{:style => "width:70%"}
+  %thead
+    %tr
+      %th Title
+      %th Author
+      %th Date
+      %th
+      %th
+
+      %tbody
+        - @posts.each do |post|
+          %tr
+            %td= post.title
+            %td= post.author
+            %td= post.date
+            %td= link_to 'Show', post
+            %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+    %br
+
+
+= link_to 'Back', posts_path

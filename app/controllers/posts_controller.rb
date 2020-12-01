@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def display_user_posts
+    @posts = Post.user_posts(current_user)
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -25,7 +29,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    @post.user = current_user
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
