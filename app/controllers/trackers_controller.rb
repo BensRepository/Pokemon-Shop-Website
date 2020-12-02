@@ -4,8 +4,7 @@ class TrackersController < ApplicationController
   # GET /trackers
   # GET /trackers.json
   def index
-    @trackers = Tracker.all
-
+    @trackers = Tracker.last
   end
 
   # GET /trackers/1

@@ -20,10 +20,7 @@
       %th
 
   %tbody
-    - @trackers.each do |tracker|
-
-      %tr
-        %td= tracker.created_at
-        %td= link_to 'Show', tracker
-        %td= link_to 'Destroy', tracker, method: :delete, data: { confirm: 'Are you sure?' }
+    %td= @trackers.created_at
+    %td= link_to 'Show', @trackers
+    %td= link_to 'Destroy', @tracker, method: :delete, data: { confirm: 'Are you sure?' }
 %br
