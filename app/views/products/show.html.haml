@@ -1,16 +1,22 @@
 %p#notice= notice
-%p
-  %b Name:
-  = @product.name
-%p
-  %b Collection:
-  = @product.collection
-%p
-  %b Category:
-  = @product.category
-%p
-%img{:src => "/" + @product.image, :width => 250}
 
-= link_to 'Edit', edit_product_path(@product)
-\|
-= link_to 'Back', products_path
+
+%table
+  %tbody
+    %tr
+    %tr
+    %td
+      %p
+        %b Name:
+        = @product.name
+      %p
+        %b Collection:
+        = @product.collection
+      %p
+        %b Category:
+        = @product.category
+      %p
+        %b
+        = link_to 'Back', products_path
+      %td
+        %img{:src => "/" + @product.image, :width => 500}

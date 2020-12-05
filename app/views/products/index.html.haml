@@ -1,5 +1,6 @@
 %h2 Products
-
+= form_for "",url: products_path, role: "search", method: :get do
+  = text_field_tag :search, @search_term,placeholder: "Search... e.g Booster Packs"
 %table{:cellpadding => "0", :cellspacing => "0"}
 
   %tbody
@@ -8,7 +9,7 @@
 
       %tr
         %td
-          %img{:src => product.image, :width => 250}
+          %img{:src => product.image, :width => 300}
       %tr
         %td= product.name
       %tr
@@ -23,9 +24,3 @@
       %td= link_to 'Show', product
       %td{:id => "product_#{product.id}", :style => "color:green;text-align:center;"}
 %br
-
-= link_to 'New Product', new_product_path
-
-
-
-%table{:style => "width:100%"}

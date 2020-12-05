@@ -1,23 +1,27 @@
 %h2 Your Posts
+= form_for "",url: userposts_path, role: "search", method: :get do
+  = text_field_tag :search, @search_term,placeholder: "Search..."
+#striped2
+  .striped
+    %table{:style => "width:70%"}
+      %thead
+        %tr
+          %th Title
+          %th Author
+          %th Date
+          %th
+          %th
 
-%table{:style => "width:70%"}
-  %thead
-    %tr
-      %th Title
-      %th Author
-      %th Date
-      %th
-      %th
-
-      %tbody
-        - @posts.each do |post|
-          %tr
-            %td= post.title
-            %td= post.author
-            %td= post.date
-            %td= link_to 'Show', post
-            %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
-    %br
+          %tbody
+            - @posts.each do |post|
+              %tr
+                %td= post.title
+                %td= post.author
+                %td= post.date
+                %td= link_to 'Show', post
+                %td= link_to 'Edit', edit_post_path(post)
+                %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+        %br
 
 
 = link_to 'Back', posts_path

@@ -15,31 +15,10 @@
     = javascript_include_tag 'application', 'data-turrbolinks-track' => true
     = javascript_include_tag 'modernizr'
     = csrf_meta_tags
-
-  %body
     = render "shared/navbar"
+%div#incoming_content
+  %body
+    = render 'shared/header'
 
-
-
-    %div#incoming_content
-      %table
-        %tr
-        %tr
-        %td
-          %a{:href => "/"}
-            %img{:src => "/pokeball.png", :width => 200}
-          %td
-            %a{:href => "/"}
-              %h1=t('app_title')
-          %td
-            %a{:href => "/tradingtracker"}
-              %img{:src => "/tracker.jpg", :width => 200}
-
-
-
-
-
-
-      = render 'shared/header'
-      = yield
-      = render 'shared/footer'
+    = yield
+    = render 'shared/footer'

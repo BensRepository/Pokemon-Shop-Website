@@ -1,3 +1,16 @@
+%div#incoming_content
+  %table
+    %tr
+    %tr
+    %td
+      %a{:href => "/"}
+        %img{:src => "/pokeball.png", :width => 200}
+      %td
+        %a{:href => "/"}
+          %h1=t('app_title')
+      %td
+        %a{:href => "/tradingtracker"}
+          %img{:src => "/tracker.png", :width => 200}
 %nav
   - if user_signed_in?
     = "#{current_user.email} |"

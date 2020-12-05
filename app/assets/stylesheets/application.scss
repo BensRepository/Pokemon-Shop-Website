@@ -17,14 +17,17 @@
 @import "bootstrap";
 $font: 'Times New Roman', 'Times', serif;
 $color: #FFFFFF;
-body {
+
+html, body {
   font-family: $font;
   background-color: $color;
-  margin: 10px;
   padding: 10px;
+  
 }
+
 h1 {color: red;text-transform: uppercase;}
 h2 {color: red;}
+
 
 /* The sidebar menu */
 .sidebar {
@@ -92,3 +95,5 @@ h2 {color: red;}
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
+.striped tbody tr:nth-of-type(odd) { background:#ff3333; }
+#striped2 tbody tr:nth-of-type(even) { background:white; }

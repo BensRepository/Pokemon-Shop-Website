@@ -1,10 +1,10 @@
 %h2 Desired Item Lists
-%h4 we have saved products you previously wanted! click 'show' to see them
+%h4 we have saved products you previously wanted!
 %h4
-  or to make a new one
+  to make a new list
   %span{:style => "color:blue;font-weight:bold"}
     %a{:href => "/products"} Click Here
-  , and add some products!
+  , add some products!
 
 %span
   %h3
@@ -12,15 +12,25 @@
 
 
 
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
+  %h2 Products you want! ( #{@trackers.product_to_trackers.count} )
 
-  %tbody
-    %td= @trackers.created_at
-    %td= link_to 'Show', @trackers
-    %td= link_to 'Destroy', @tracker, method: :delete, data: { confirm: 'Are you sure?' }
-%br
+  %table{:cellpadding => "0", :cellspacing => "0"}
+
+    %tbody
+      - @trackers.product_to_trackers.each do |item|
+        %tr
+          %td
+            %img{:src => "/" + item.product.image, :width => 250}
+        %tr
+          %td= item.product.name
+        %tr
+          %th Collection
+          %td= item.product.collection
+        %tr
+          %th Category
+          %td= item.product.category
+        %tr
+          %td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+  %br

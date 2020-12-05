@@ -5,6 +5,10 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    if params[:search]
+      @search_term = params[:search]
+      @products = @products.search_by(@search_term)
+    end
   end
 
   # GET /products/1

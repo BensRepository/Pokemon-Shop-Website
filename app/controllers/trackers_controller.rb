@@ -1,10 +1,14 @@
 class TrackersController < ApplicationController
   before_action :set_tracker, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /trackers
   # GET /trackers.json
   def index
     @trackers = Tracker.last
+    if @trackers == nil
+      Tracker.create(product_to_tracker: 1)
+    else
+    end
   end
 
   # GET /trackers/1

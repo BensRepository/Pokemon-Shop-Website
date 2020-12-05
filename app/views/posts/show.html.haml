@@ -1,21 +1,21 @@
 %p#notice= notice
 
-%p
-  %b Title:
+%h2
   = @post.title
 %p
-  %b Content:
   = @post.content
 %p
-  %b Author:
+  %b By:
   = @post.author
-%p
-  %b Date:
+  =","
   = @post.date
+
+
+
+
 %p
   = link_to 'Add Comment', new_comment_path(post_id: @post)
 
-  = link_to 'Edit', edit_post_path(@post)
 \|
 = link_to 'Back', posts_path
 %p Comments:

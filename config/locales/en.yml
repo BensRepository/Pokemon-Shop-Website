@@ -32,11 +32,13 @@
 en:
   app_title: PokeBen
   app_description: best website ever
+  copy_right: All rights reserved | Powered by Magic
 
   home:
       home:
         title: PokeBen
-        welcome: A place where all the booster boxes are in stock.
+        welcome: Welcome to PokeBen! A place for you to relax, read community news and try .
+        welcome2: add new Pokemon products to your collection! have fun and catch them all!
 
       contact:
         title: Contact us
@@ -53,5 +55,8 @@ en:
         submit: Contact Us
 
       request_contact:
-        no_email: You must supply an email address
+        no_email: You must supply an email address!
+        no_name: You must supply a name!
+        no_telephone: You must supply a telephone number!
+        no_message: You must write a message!
         email_sent: Thank you. We will be in touch shortly.

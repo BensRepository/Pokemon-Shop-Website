@@ -5,10 +5,18 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    if params[:search]
+      @search_term = params[:search]
+      @posts = @posts.search_by(@search_term)
+    end
   end
 
   def display_user_posts
     @posts = Post.user_posts(current_user)
+    if params[:search]
+      @search_term = params[:search]
+      @posts = @posts.search_by(@search_term).user_posts(current_user)
+    end
   end
 
   # GET /posts/1
