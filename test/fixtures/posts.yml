@@ -5,9 +5,11 @@ one:
   content: MyText
   author: MyString
   date: 2020-11-27
+  user_id: 1
 
 two:
   title: MyString
   content: MyText
   author: MyString
   date: 2020-11-27
+  user_id: 2

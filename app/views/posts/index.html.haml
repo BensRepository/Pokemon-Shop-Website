@@ -22,9 +22,12 @@
             %td= post.title
             %td= post.author
             %td= post.date
-            %td= link_to 'Show', post
+            %td= link_to 'Read', post
+            -if post.user.id == current_user.id
+              %td= link_to 'Edit post', edit_post_path(post)
+              %td= link_to 'Delete post', post, method: :delete, data: { confirm: 'Are you sure?' }
 
 
     %br
 
-    = link_to 'New Post', new_post_path
+    %h3= link_to 'Create new post!', new_post_path

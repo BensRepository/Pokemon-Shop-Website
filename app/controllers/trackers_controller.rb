@@ -6,7 +6,7 @@ class TrackersController < ApplicationController
   def index
     @trackers = Tracker.last
     if @trackers == nil
-      Tracker.create(product_to_tracker: 1)
+      @trackers= Tracker.create()
     else
     end
   end

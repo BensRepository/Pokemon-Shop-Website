@@ -14,7 +14,7 @@
       %tr
 
         %td= comment.post.title
-        %td= comment.comment
+        %td= comment.message
         %td= link_to 'Show', comment
         %td= link_to 'Edit', edit_comment_path(comment)
         %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }

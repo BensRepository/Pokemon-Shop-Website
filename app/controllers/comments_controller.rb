@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.user_comments(current_user)
+    @comments = Comment.all
 
   end
 
@@ -59,7 +59,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to @comment.post, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -72,7 +72,7 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:post_id, :comment)
+      params.require(:comment).permit(:post_id, :message)
     end
 
     def set_post

@@ -2,8 +2,11 @@
 
 one:
   post: one
-  comment: MyString
+  message: i love cheese
+  user_id: 1
+
 
 two:
   post: two
-  comment: MyString
+  message: i love stuff
+  user_id: 2

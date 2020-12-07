@@ -28,16 +28,6 @@ class ProductToTrackersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
-    get edit_product_to_tracker_url(@product_to_tracker)
-    assert_response :success
-  end
-
-  test "should update product_to_tracker" do
-    patch product_to_tracker_url(@product_to_tracker), params: { product_to_tracker: { product_id: @product_to_tracker.product_id, tracker_id: @product_to_tracker.tracker_id } }
-    assert_redirected_to product_to_tracker_url(@product_to_tracker)
-  end
-
   test "should destroy product_to_tracker" do
     assert_difference('ProductToTracker.count', -1) do
       delete product_to_tracker_url(@product_to_tracker)

@@ -17,13 +17,18 @@
   = link_to 'Add Comment', new_comment_path(post_id: @post)
 
 \|
-= link_to 'Back', posts_path
-%p Comments:
+= link_to 'Back', posts_path()
+%h3 Comments:
 %table
   %tbody
   - @post.comments.each do |comment|
     %tr
       %td="PokeBen user: "
+      %td &nbsp;
       %td= comment.user_id
-      %td= "_____________"
-      %td= comment.comment
+      %td &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+      %td= comment.message
+      %td
+      -if comment.user.id == current_user.id
+        %td= link_to 'Edit', edit_comment_path(comment)
+        %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
