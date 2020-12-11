@@ -1,10 +1,11 @@
-%h2 Desired Item Lists
-%h4 we have saved products you previously wanted!
+%h2= t('.title')
+%h4= t('.description1')
 %h4
-  to make a new list
+  = t('.description2')
   %span{:style => "color:blue;font-weight:bold"}
     %a{:href => "/products"} Click Here
-  , add some products!
+  ,
+  = t('.description3')
 
 %span
   %h3

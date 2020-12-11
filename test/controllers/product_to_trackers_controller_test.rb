@@ -1,19 +1,12 @@
 require 'test_helper'
 
 class ProductToTrackersControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @product_to_tracker = product_to_trackers(:one)
+    sign_in users(:one)
   end
 
-  test "should get index" do
-    get product_to_trackers_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_product_to_tracker_url
-    assert_response :success
-  end
 
   test "should create product_to_tracker" do
     assert_difference('ProductToTracker.count') do
@@ -23,16 +16,12 @@ class ProductToTrackersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to product_to_tracker_url(ProductToTracker.last)
   end
 
-  test "should show product_to_tracker" do
-    get product_to_tracker_url(@product_to_tracker)
-    assert_response :success
-  end
 
   test "should destroy product_to_tracker" do
     assert_difference('ProductToTracker.count', -1) do
       delete product_to_tracker_url(@product_to_tracker)
     end
 
-    assert_redirected_to product_to_trackers_url
+    assert_redirected_to :back
   end
 end

@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @post = posts(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
@@ -34,7 +36,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update post" do
-    patch post_url(@post), params: { post: { author: @post.author, content: @post.content, date: @post.date, title: @post.title } }
+    patch post_url(@post), params: { post: { author: @post.author, content: @post.content, date: @post.date, title: @post.title} }
     assert_redirected_to post_url(@post)
   end
 

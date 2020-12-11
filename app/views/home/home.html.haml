@@ -1,53 +1,23 @@
+%title= t('app_title')
+%h3=t('.welcome')
+%h3=t('.welcome2')
 = javascript_include_tag 'home'
 .alert
   %span.closebtn{:onclick => "this.parentElement.style.display='none';"} ×
   %strong WARNING!
   due to COVID-19 site moderation will be lower than usual. We hope you stick with us during these difficult times.
-%h3=t('.welcome')
-%h3=t('.welcome2')
 
 
 
 
 %div#incoming_content
   %body
-    %h2 Who's that Pokemon!
-    %p
-      Look at the image below and try guess the Pokemon!
-      See if you can guess it.
+    %h2= t('.game_title')
+    %p= t('.game_description')
+
     .form
-      %label{:for => "guessField"} Enter a guess:
+      %label{:for => "guessField"}
+        =t('.box_text') + ":"
       %input#guessField.guessField{:type => "text"}/
       %input#submitguess.guessSubmit{:type => "submit", :value => "Submit guess"}/
       <button onClick="window.location.reload();">Play again</button>
-
-    :javascript
-
-          // random pokemon generated
-          var pokemon = ["charizard","venusaur","blastiose","jigglypuff","snorlax","mew","eevee","rillaboom","pikachu"];
-          const random = Math.floor(Math.random() * pokemon.length);
-          var y = pokemon[random];
-          var pokemonimage = document.createElement("img");
-          pokemonimage.src = y + ".jpg";
-          document.body.appendChild(pokemonimage);
-
-
-          // guess counter
-          var guess = 1;
-
-          document.getElementById("submitguess").onclick = function(){
-
-         // pokemon guessed by user
-          var x = document.getElementById("guessField").value;
-
-          if(x == y)
-          {
-             alert("WELL DONE!! The Pokemon was " + y +", you guessed it in "
-                       + guess + " attempts! ");
-         }
-         else
-         {
-             guess++;
-             alert("Not quite! Try again :)")
-         }
-      }

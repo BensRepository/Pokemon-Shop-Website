@@ -3,10 +3,10 @@
 one:
   post: one
   message: i love cheese
-  user_id: 1
+  user: one
 
 
 two:
   post: two
   message: i love stuff
-  user_id: 2
+  user: one

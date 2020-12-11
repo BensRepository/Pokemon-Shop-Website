@@ -1,4 +1,5 @@
-%h2 Your Posts
+%h2= t('.title')
+%title= t('.title')
 = form_for "",url: userposts_path, role: "search", method: :get do
   = text_field_tag :search, @search_term,placeholder: "Search..."
 #striped2
@@ -22,6 +23,3 @@
                 %td= link_to 'Edit', edit_post_path(post)
                 %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
         %br
-
-
-= link_to 'Back', posts_path

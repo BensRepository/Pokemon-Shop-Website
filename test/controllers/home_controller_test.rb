@@ -4,9 +4,9 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
   test "should get home" do
     get root_url
     assert_response :success
-    assert_select'title', 'PokeBen'
-    assert_select'h1', 'PokeBen'
-    assert_select'p', 'A place where all the booster boxes are in stock.'
+    puts @response.body
+    assert_select 'title', 'PokeBen'
+
   end
   test "should get contact" do
   get contact_url
@@ -16,12 +16,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
   assert_select 'h1', 'Contact us'
   assert_select 'p', 'if you have any queries please fill in this form and get in touch with us.'
   end
-  test "should post request contact but no email"do
-  post request_contact_url
-  assert_response :redirect
-  assert_not_empty flash[:alert]
-  assert_nil flash[:notice]
-  end
+
   test "should post request contact" do
   post request_contact_url, params:
   {name: "Matthew", email: "matthew@me.com",

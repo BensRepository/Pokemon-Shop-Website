@@ -9,6 +9,10 @@ class CommentsController < ApplicationController
 
   end
 
+  def display_user_comments
+    @comments = current_user.comments
+
+  end
   # GET /comments/1
   # GET /comments/1.json
   def show

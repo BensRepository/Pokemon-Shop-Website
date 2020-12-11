@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class TrackersControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @tracker = trackers(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
@@ -10,10 +12,6 @@ class TrackersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new" do
-    get new_tracker_url
-    assert_response :success
-  end
 
   test "should create tracker" do
     assert_difference('Tracker.count') do

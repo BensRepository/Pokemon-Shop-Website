@@ -1,7 +1,9 @@
-%h2 Trading Fourm
-%h4 The hub to submit any Pokemon news or trades
+%h2= t('.title')
+%h4= t('.description')
+%title= t('.title')
 = form_for "",url: posts_path, role: "search", method: :get do
   = text_field_tag :search, @search_term,placeholder: "Search..."
+
 %table{:cellpadding => "0", :cellspacing => "0"}
 #striped2
   .striped
@@ -23,11 +25,11 @@
             %td= post.author
             %td= post.date
             %td= link_to 'Read', post
-            -if post.user.id == current_user.id
+            -if post.user == current_user
               %td= link_to 'Edit post', edit_post_path(post)
               %td= link_to 'Delete post', post, method: :delete, data: { confirm: 'Are you sure?' }
 
 
     %br
 
-    %h3= link_to 'Create new post!', new_post_path
+    %h3= link_to t('.new'), new_post_path

@@ -1,4 +1,5 @@
-%h2 Products
+%h2= t('.title')
+%title= t('.title')
 = form_for "",url: products_path, role: "search", method: :get do
   = text_field_tag :search, @search_term,placeholder: "Search... e.g Booster Packs"
 %table{:cellpadding => "0", :cellspacing => "0"}
@@ -20,7 +21,7 @@
         %td= product.category
       %tr
       %span
-        %td= button_to 'Add to Tracker', product_to_trackers_path(product_id: product), :remote => true
+        %td= button_to t('.button'), product_to_trackers_path(product_id: product), :remote => true
       %td= link_to 'Show', product
       %td{:id => "product_#{product.id}", :style => "color:green;text-align:center;"}
 %br

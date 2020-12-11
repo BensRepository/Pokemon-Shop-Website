@@ -33,17 +33,19 @@ en:
   app_title: PokeBen
   app_description: best website ever
   copy_right: All rights reserved | Powered by Magic
+  account_info: PokeBen Account Number
 
   home:
       home:
-        title: PokeBen
+        title: Home
         welcome: Welcome to PokeBen! A place for you to relax, read community news and try .
         welcome2: add new Pokemon products to your collection! have fun and catch them all!
-
+        game_title: Who's that Pokemon!
+        game_description: Look at the image below and try guess the Pokemon! See if you can guess it.
+        box_text: Enter a guess
       contact:
         title: Contact us
         contact_us: if you have any queries please fill in this form and get in touch with us.
-
         name: "Name:"
         enter_name: Enter your name
         email: "Email:"
@@ -53,10 +55,45 @@ en:
         message: "Message:"
         enter_message: What do you want to say?
         submit: Contact Us
-
       request_contact:
         no_email: You must supply an email address!
         no_name: You must supply a name!
         no_telephone: You must supply a telephone number!
         no_message: You must write a message!
         email_sent: Thank you. We will be in touch shortly.
+  about:
+      index:
+        title: About
+        line1: PokeBen was founded in November 2020 by a Computer Science
+        line2: Student named Ben Hodges. It was developed for his web application
+        line3: coursework but has since vent viral, allowing fellow lovers of the game
+        line4: to have a reliable platform to both chat and track desired Pokemon products.
+  comments:
+      display_user_comments:
+        title: Your Comments
+      new:
+        new: New Comment
+      edit:
+        edit: Edit Comment
+  posts:
+    index:
+      title: Trading Fourm
+      description: The hub to submit any Pokemon news or trades
+      new: Create new post!
+    display_user_posts:
+        title: Your Posts
+    show:
+      comments_title: Comments
+  products:
+    index:
+      title: Products
+      button: Add to Tracker
+    new:
+      new: New Product
+  trackers:
+    index:
+      title: Desired Item Lists
+      title2: Products you want!
+      description1: we have saved products you previously wanted!
+      description2: to make a new list
+      description3: and add some products!
