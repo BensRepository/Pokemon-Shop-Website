@@ -1,6 +1,9 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
+Product.delete_all
+User.delete_all
+Post.delete_all
 
 #Products
 Product.create(name: 'Darkness Ablaze Booster Box', collection: 'Sword & Shield', category: "Booster Box", image: 'boosterbox.jpg')
