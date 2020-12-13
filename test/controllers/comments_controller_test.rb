@@ -13,10 +13,13 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new" do
-    get :new, comment_id: @comment 
+  test "should get user comments" do
+    get usercomments_url
     assert_response :success
+    assert_select 'title','Your Comments'
+    assert_select 'h2','Your Comments'
   end
+
 
   test "should create comment" do
     assert_difference('Comment.count') do
@@ -29,11 +32,14 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   test "should show comment" do
     get comment_url(@comment)
     assert_response :success
+    assert_select 'h1','PokeBen'
   end
 
   test "should get edit" do
     get edit_comment_url(@comment)
     assert_response :success
+    assert_select 'h1','Edit Comment'
+    assert_select 'title','PokeBen'
   end
 
   test "should update comment" do

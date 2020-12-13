@@ -5,7 +5,7 @@ class TrackersController < ApplicationController
   # GET /trackers.json
   def index
     @trackers = Tracker.last
-    if @trackers == nil
+    if @trackers == nil #creates tracker if one doesn't already exist
       @trackers= Tracker.create()
     else
     end
@@ -32,7 +32,7 @@ class TrackersController < ApplicationController
 
     respond_to do |format|
       if @tracker.save
-        format.html { redirect_to @tracker, notice: 'Tracker was successfully created.' }
+        format.html { redirect_to @tracker, notice: t('.notice') }
         format.json { render :show, status: :created, location: @tracker }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class TrackersController < ApplicationController
   def update
     respond_to do |format|
       if @tracker.update(tracker_params)
-        format.html { redirect_to @tracker, notice: 'Tracker was successfully updated.' }
+        format.html { redirect_to @tracker, notice: t('.notice') }
         format.json { render :show, status: :ok, location: @tracker }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class TrackersController < ApplicationController
   def destroy
     @tracker.destroy
     respond_to do |format|
-      format.html { redirect_to trackers_url, notice: 'Tracker was successfully destroyed.' }
+      format.html { redirect_to trackers_url, notice: t('.notice') }
       format.json { head :no_content }
     end
   end

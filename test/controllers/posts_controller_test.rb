@@ -10,6 +10,17 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get posts_url
     assert_response :success
+    assert_select 'h2','Trading Fourm'
+    assert_select 'title','Trading Fourm'
+    assert_select 'h4','The hub to submit any Pokemon news or trades'
+  end
+
+  test "should get user posts" do
+    get userposts_url
+    assert_response :success
+    assert_select 'h2','Your Posts'
+    assert_select 'title','Your Posts'
+
   end
 
   test "should get new" do
@@ -19,7 +30,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create post" do
     assert_difference('Post.count') do
-      post posts_url, params: { post: { author: @post.author, content: @post.content, date: @post.date, title: @post.title } }
+      post posts_url, params: { post: { author: @post.author, content: @post.content, date: @post.date, title: "title" } }
     end
 
     assert_redirected_to post_url(Post.last)
@@ -30,14 +41,14 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should not go edit" do
     get edit_post_url(@post)
-    assert_response :success
+    assert_redirected_to posts_url()
   end
 
   test "should update post" do
     patch post_url(@post), params: { post: { author: @post.author, content: @post.content, date: @post.date, title: @post.title} }
-    assert_redirected_to post_url(@post)
+    assert_response :success
   end
 
   test "should destroy post" do

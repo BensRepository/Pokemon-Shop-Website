@@ -29,12 +29,12 @@ class ProductToTrackersController < ApplicationController
 
     respond_to do |format|
       if @product_to_tracker.save
-        format.html { redirect_to @product_to_tracker.tracker, notice: 'Product added to Trading Tracker' }
+        format.html { redirect_to @product_to_tracker.tracker, notice: t('.sucessfull_notice') }
         format.json { render :show, status: :created, location: @product_to_tracker }
-        format.js { flash[:notice] = 'Product added to Tracker'}
+        format.js { flash[:notice] = t('.sucessfull_notice')}
       else
         format.html { render :new }
-        format.js { flash[:notice] = 'Product could not be added to Tracker'}
+        format.js { flash[:notice] = t('.unsucessfull_notice')}
         format.json { render json: @product_to_tracker.errors, status: :unprocessable_entity }
       end
     end
@@ -45,7 +45,7 @@ class ProductToTrackersController < ApplicationController
   def update
     respond_to do |format|
       if @product_to_tracker.update(product_to_tracker_params)
-        format.html { redirect_to @product_to_tracker, notice: 'Product to tracker was successfully updated.' }
+        format.html { redirect_to @product_to_tracker, notice: t('.notice') }
         format.json { render :show, status: :ok, location: @product_to_tracker }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class ProductToTrackersController < ApplicationController
   def destroy
     @product_to_tracker.destroy
     respond_to do |format|
-      format.html { redirect_to request.referrer, notice: 'Product to tracker was successfully destroyed.' }
+      format.html { redirect_to trackers_url, notice: t('.notice') }
       format.json { head :no_content }
     end
   end

@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action:set_post, only: [:new, :create]
-  before_action :authenticate_user!
+  before_action :authenticate_user! #user must be logged in to access page
   # GET /comments
   # GET /comments.json
   def index
@@ -24,18 +24,22 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/1/edit
-  def edit
+  def edit #validation so only the comments creator can edit it
+    if @comment.user != current_user
+      redirect_to posts_url, notice: t('.notice')
+    else
+    end
   end
 
   # POST /comments
   # POST /comments.json
   def create
     @comment = @post.comments.new(comment_params)
-    @comment.user = current_user
+    @comment.user = current_user #when comment is created a user is assigned to its user field
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment, notice: t('.notice') }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -49,7 +53,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @comment, notice: t('.notice') }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -63,7 +67,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to @comment.post, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to @comment.post, notice: t('.notice') }
       format.json { head :no_content }
     end
   end

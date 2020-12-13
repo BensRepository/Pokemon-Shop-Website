@@ -2,8 +2,8 @@
 %table{:style => "width:70%"}
   %thead
     %tr
-      %th Post
-      %th Comment
+      %th= t('.heading2')
+      %th= t('.heading1')
       %th
       %th
       %th
@@ -14,9 +14,9 @@
 
         %td= comment.post.title
         %td= comment.message
-        %td= link_to 'Show', comment
-        %td= link_to 'Edit', edit_comment_path(comment)
-        %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to t('show'), comment
+        %td= link_to t('edit'), edit_comment_path(comment)
+        %td= link_to t('delete'), comment, method: :delete, data: { confirm: t('delete_message') }
 
 %br
 = link_to 'Back', posts_path

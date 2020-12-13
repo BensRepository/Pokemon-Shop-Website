@@ -1,11 +1,11 @@
 %title= t('app_title')
 %p
-  %b Post:
+  %b=t('.heading2') +":"
   = @comment.post.title
 %p
-  %b Comment:
+  %b=t('.heading1') +":"
   = @comment.message
 
-= link_to 'Edit', edit_comment_path(@comment)
+= link_to t('edit'), edit_comment_path(@comment)
 \|
-= link_to 'Back', @comment.post
+= link_to t('back'), @comment.post

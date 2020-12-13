@@ -11,9 +11,9 @@
 
       %thead
         %tr
-          %th Title
-          %th Author
-          %th Date
+          %th= t('.heading1')
+          %th= t('.heading2')
+          %th= t('.heading3')
           %th
           %th
           %th
@@ -24,10 +24,10 @@
             %td= post.title
             %td= post.author
             %td= post.date
-            %td= link_to 'Read', post
+            %td= link_to t('read'), post
             -if post.user == current_user
-              %td= link_to 'Edit post', edit_post_path(post)
-              %td= link_to 'Delete post', post, method: :delete, data: { confirm: 'Are you sure?' }
+              %td= link_to  t('edit'), edit_post_path(post)
+              %td= link_to t('delete'), post, method: :delete, data: { confirm: 'Are you sure?' }
 
 
     %br

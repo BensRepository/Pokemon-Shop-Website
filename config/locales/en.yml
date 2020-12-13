@@ -34,6 +34,13 @@ en:
   app_description: best website ever
   copy_right: All rights reserved | Powered by Magic
   account_info: PokeBen Account Number
+  show: Show
+  edit: Edit
+  delete: Delete
+  delete_message: Are you sure?
+  read: Read
+  save: Save
+  back: Back
 
   home:
       home:
@@ -43,18 +50,16 @@ en:
         game_title: Who's that Pokemon!
         game_description: Look at the image below and try guess the Pokemon! See if you can guess it.
         box_text: Enter a guess
+
       contact:
         title: Contact us
         contact_us: if you have any queries please fill in this form and get in touch with us.
         name: "Name:"
-        enter_name: Enter your name
         email: "Email:"
-        enter_email: Enter your email address
         telephone: "Telephone:"
-        enter_telephone: Enter your telephone number
         message: "Message:"
-        enter_message: What do you want to say?
         submit: Contact Us
+
       request_contact:
         no_email: You must supply an email address!
         no_name: You must supply a name!
@@ -68,28 +73,81 @@ en:
         line2: Student named Ben Hodges. It was developed for his web application
         line3: coursework but has since vent viral, allowing fellow lovers of the game
         line4: to have a reliable platform to both chat and track desired Pokemon products.
+
   comments:
       display_user_comments:
         title: Your Comments
+        heading1: Comments
+        heading2: Posts
+
       new:
         new: New Comment
+
       edit:
         edit: Edit Comment
+        notice: This is not your comment!
+
+      show:
+        heading1: Comments
+        heading2: Posts
+
+      create:
+        notice: Comment was successfully created.
+
+      update:
+        notice: Comment was successfully updated.
+
+      destroy:
+        notice: Comment was successfully destroyed.
   posts:
     index:
       title: Trading Fourm
       description: The hub to submit any Pokemon news or trades
       new: Create new post!
+      heading1: Title
+      heading2: Author
+      heading3: Date
+
+    edit:
+      edit: Edit Post
+      notice: This is not your post!
+
+    create:
+      notice: Post was successfully created.
+
+    update:
+      notice: Post was successfully updated.
+
+    destroy:
+      notice: Post was successfully destroyed.
+
     display_user_posts:
         title: Your Posts
+        heading1: Title
+        heading2: Author
+        heading3: Date
+
     show:
       comments_title: Comments
+      add_comment: Add Comment
+
   products:
     index:
       title: Products
       button: Add to Tracker
+
     new:
       new: New Product
+
+    create:
+      notice: Product was successfully created.
+
+    update:
+      notice: Product was successfully updated.
+
+    destroy:
+      notice: Product was successfully destroyed.
+
   trackers:
     index:
       title: Desired Item Lists
@@ -97,3 +155,23 @@ en:
       description1: we have saved products you previously wanted!
       description2: to make a new list
       description3: and add some products!
+
+    create:
+      notice: Tracker was successfully created.
+
+    update:
+      notice: Tracker was successfully updated.
+
+    destroy:
+      notice: Tracker was successfully destroyed.
+
+  product_to_trackers:
+    create:
+      sucessfull_notice: Product added to Tracker
+      unsucessfull_notice: Product could not be added to Tracker
+
+    update:
+      notice: Product to tracker was successfully updated.
+
+    destroy:
+      notice: Product removed from your tracker.

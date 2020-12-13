@@ -13,10 +13,10 @@
 
 
 %p
-  = link_to 'Add Comment', new_comment_path(post_id: @post)
+  = link_to t('.add_comment'), new_comment_path(post_id: @post)
 
 \|
-= link_to 'Back', posts_path()
+= link_to t('back'), posts_path()
 %h3= t('.comments_title') + ":"
 %table
   %tbody
@@ -29,5 +29,5 @@
       %td= comment.message
       %td
       -if comment.user == current_user
-        %td= link_to 'Edit', edit_comment_path(comment)
-        %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to t('edit'), edit_comment_path(comment)
+        %td= link_to t('delete'), comment, method: :delete, data: { confirm: 'Are you sure?' }

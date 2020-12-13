@@ -7,9 +7,9 @@
     %table{:style => "width:70%"}
       %thead
         %tr
-          %th Title
-          %th Author
-          %th Date
+          %th=t('.heading1')
+          %th=t('.heading2')
+          %th=t('.heading3')
           %th
           %th
 
@@ -19,7 +19,7 @@
                 %td= post.title
                 %td= post.author
                 %td= post.date
-                %td= link_to 'Show', post
-                %td= link_to 'Edit', edit_post_path(post)
-                %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+                %td= link_to t('show'), post
+                %td= link_to t('edit'), edit_post_path(post)
+                %td= link_to t('delete'), post, method: :delete, data: { confirm: t('delete_message') }
         %br

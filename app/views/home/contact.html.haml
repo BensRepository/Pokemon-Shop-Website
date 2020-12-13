@@ -1,16 +1,15 @@
-%title=t('.title')
+%title= t('.title')
 %body{:onload => "function()"}
   %h2=t('.title')
   %p=t('.contact_us')
 
   = form_tag request_contact_path,:id => 'ContactForm', method: 'post' do
     = label_tag :name, t('.name')
-    = text_field_tag :name, '', title: t('.enter_name'), size: 50
-    = label_tag :name,''
+    = text_field_tag :name
     = label_tag :email, t('.email')
-    = email_field_tag :email, '', title: t('.enter_email')
+    = email_field_tag :email
     = label_tag :telephone, t('.telephone')
-    = telephone_field_tag :telephone, '', title: t('.enter_telephone')
+    = telephone_field_tag :telephone
     = label_tag :message, t('.message')
-    = text_field_tag :message, '', title: t('.enter_message'), size: 100
+    = text_field_tag :message,'', size: 70
     = submit_tag t('.submit')

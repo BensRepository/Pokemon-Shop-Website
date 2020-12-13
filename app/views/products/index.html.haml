@@ -22,6 +22,6 @@
       %tr
       %span
         %td= button_to t('.button'), product_to_trackers_path(product_id: product), :remote => true
-      %td= link_to 'Show', product
+      %td= link_to t('show'), product
       %td{:id => "product_#{product.id}", :style => "color:green;text-align:center;"}
 %br
